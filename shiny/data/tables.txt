@@ -1,0 +1,7 @@
+names|files|data_type
+RNA AFFY HG U-133 (A-B)|data/RNA__Affy_HG_U133(A_B)_GCRMA.txt|gene
+RNA AFFY HG U-133 Plus 2.0|data/RNA__Affy_HG_U133_Plus_2.0_GCRMA.txt|gene
+RNA AFFY HG U-95 (A-E)|data/RNA__Affy_HG_U95(A_E)_GCRMA.txt|gene
+Deep Proteomes|data/deep_proteomes.csv|deep_proteomes
+Proteome Profiles|data/proteome_profiles.csv|proteomes
+Xenograft|data/xenograft.txt|xeno
