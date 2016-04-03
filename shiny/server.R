@@ -112,6 +112,22 @@ shinyServer(function(input, output) {
   #filter = 'top'
   ))
   
+  output$conversion <- DT::renderDataTable(DT::datatable({
+  
+    read.table("data/converted_final.csv",
+               sep = "|",
+               quote = "",
+               header = TRUE,
+               stringsAsFactors = FALSE)
+    },
+    extensions = c('Buttons'),
+    options = list(pageLength = 72, 
+                   dom = 'Bfrtip2',
+                   buttons = c('copy', 'csv', 'excel', 'pdf', 'print',I('colvis')),
+                   scrollX = TRUE)
+    
+    
+  ))
 })
 
 

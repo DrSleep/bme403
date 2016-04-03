@@ -28,8 +28,11 @@ agg_methods <- c(
 
 # Define the overall UI
 shinyUI(
-  fluidPage(
-    titlePanel("Bio Data Tables"),
+  navbarPage("BioData",
+             tabPanel("Main Tables",
+
+  #fluidPage(
+  #  titlePanel("Bio Data Tables"),
     
     # Create a new Row in the UI for selectInputs
     fluidRow(
@@ -42,11 +45,24 @@ shinyUI(
              selectInput("agg",
                          "Choose the aggregation method:",
                          agg_methods)
-      )
+      ),
+      hr(),
+      helpText("Mean method outputs an average value", 
+               "for each column for each unique gene name"),
+      hr(),
+      helpText("Max method outputs the values of the row", 
+               "with the maximum sum of values among the", 
+               "rows with the same gene name")
     ),
     # Create a new row for the table.
     fluidRow(
       DT::dataTableOutput("table")
     )
-  )
+  ),
+  tabPanel("Names Conversion",
+           fluidRow(
+             DT::dataTableOutput("conversion")
+           )
+)
+)
 )
