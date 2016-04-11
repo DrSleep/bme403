@@ -1,0 +1,27 @@
+---
+title: ''
+output: html_document
+---
+
+<br>
+
+*This interactive application is a part of the homework for the BME403 class of spring semester, 2016.* 
+*All the presented visualisations and tables are based on the [NCI-60](http://www.nature.com/nrc/journal/v6/n10/full/nrc1951.html) dataset. In particular, the processed microarray data have been downloaded from [CellMiner web application](http://discover.nci.nih.gov/cellminer/loadDownload.do); the proteomics data is available at the [NCI web resource](http://129.187.44.58:7070/NCI60/).*
+
+### Table
+
+To start using the application, you need to choose one of available datasets. As one gene may have several expression measurements with different values, you can also choose the type of aggregation. 
+*Note that this step is optional for visualisation tabs, but obligatory for performing t-tests.*
+
+### T-test
+
+Different cell lines may show various gene expression levels. To determine whether such changes are significant between cell lines from different tissues, you can perform a simple [t-test](https://en.wikipedia.org/wiki/Student%27s_t-test). As the number of genes is fairly large, there may arise [the multiple comparisons problem](https://en.wikipedia.org/wiki/Multiple_comparisons_problem). To overcome it, you can use either [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) or [Benjamini-Hochberg correction](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini.E2.80.93Hochberg_procedure), which is based on the false discovery rate.
+
+### Exploratory
+
+This tab allows to visualise the distribution of gene expression data through cell lines either as a boxplot or a histogram. To prevent the clutter from plotting too many cell lines, the allowed number of cell lines is limited to 10. 
+
+### Heatmap and Dendrogram
+
+Quite often you would like to infer which cell lines display common behaviour and show similar gene expression values. Besides that, you might want to see whether cell lines from the same tissue are analogous to each other. The heatmap, and associated with it dendrogram, may help to identify those patterns among the cell lines. In that setting, each cell line can be represented as a long vector of all gene expression values. As there are several thousand genes, [the principal component analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) can compress this huge space onto a much smaller one and conserve meaningful information. Another approach implies that a random sample of genes can also provide valuable insights to perform [hierarchical clustering](https://en.wikipedia.org/wiki/Hierarchical_clustering).
+
